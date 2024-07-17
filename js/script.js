@@ -21,7 +21,7 @@ console.log(detailsBtns)
 }
 
 async function display(customers, transactions){
-    displayChart(1);
+    displayChart(customers[0].id);
 let box=``;
 let details=``;
 customers.forEach(function(customer){
