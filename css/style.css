@@ -22,7 +22,9 @@ body{
     background-color: #fff;
     border-bottom: 1px rgba(128, 128, 128, 0.329) solid;
 }
-
+h1{
+    color:#333333;
+}
 .details{
     display: none;
     background-color: rgba(223, 223, 223, 0.247);
