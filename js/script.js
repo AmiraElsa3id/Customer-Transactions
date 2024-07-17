@@ -21,6 +21,7 @@ console.log(detailsBtns)
 }
 
 async function display(customers, transactions){
+    displayChart(1);
 // $('data').html()
 let box=``;
 let details=``;
