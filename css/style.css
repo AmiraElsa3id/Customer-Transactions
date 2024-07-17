@@ -1,0 +1,60 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F4F4F6 !important;
+
+}
+
+.head{
+    background-color: #6334F0;
+    color: #fff;
+    padding: 15px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.data{
+    border-radius: 10px;
+}
+.customer-data{
+    color: #363434;
+    padding: 15px 0;
+    font-weight: 500;
+    font-size: 25px;
+    background-color: #fff;
+    border-bottom: 1px rgba(128, 128, 128, 0.329) solid;
+}
+
+.details{
+    display: none;
+    background-color: rgba(223, 223, 223, 0.247);
+}
+.customer-data .col-md-4 div {
+    width: 90%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 20px;
+}
+.btn{
+    background-color: #f07034;
+    color: #fff;
+}
+.btn:hover{
+    background-color: #f18654;
+    color: #fff
+}
+.main{
+    flex-direction: row-reverse;
+}
+.width-95{
+    width: 95%;
+    margin: auto;
+}
+@media(max-width:400px){
+    .head{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       height: 100%;
+        padding: 0;
+       
+    }
+}
