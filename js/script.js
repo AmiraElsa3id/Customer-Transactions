@@ -69,6 +69,7 @@ customers.forEach(function(customer){
 
 $('.data').html(box)
     }catch{
+        $('.data').html("")
         console.log('error')
     }
     
