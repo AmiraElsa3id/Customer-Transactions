@@ -21,7 +21,9 @@ console.log(detailsBtns)
 }
 
 async function display(customers, transactions){
-    displayChart(customers[0].id);
+    try{
+        
+        displayChart(customers[0].id);
 let box=``;
 let details=``;
 customers.forEach(function(customer){
@@ -34,11 +36,11 @@ customers.forEach(function(customer){
     let data=JSON.stringify(customerTransactions)
     customerTransactions.forEach(function(ele){
         details+=`
-        <div class=" col-md-6 d-flex justify-content-around">
+        <div class=" col-md-6 d-flex justify-content-between px-2">
             <div class="text-secondary">Date :</div>
             <div>${ele.date}</div>
         </div>
-        <div class=" col-md-6 d-flex justify-content-around">
+        <div class=" col-md-6 d-flex justify-content-between px-2">
             <div class="text-secondary">Amount :</div>
             <div>${ele.amount}</div>
         </div>
@@ -51,8 +53,8 @@ customers.forEach(function(customer){
             <div  class="row g-3 text-center m-auto ">
                 <div class="col">${customer.name}</div>
                 <div class="col">${customerTransactions.reduce((sum, t) => sum + t.amount, 0)}</div>
-                <div class="col "> <a href="#" class="btn details-btn me-2">Details</a>
-                <a href="#" onclick="displayChart(${customer.id})" class="btn ">chart</a></div>
+                <div class="col button-group"> <a href="#" class="btn details-btn me-2 equal-width-btn d-flex align-items-center justify-content-center">Details</a>
+                <a href="#" onclick="displayChart(${customer.id})" class="btn equal-width-btn d-flex align-items-center justify-content-center">chart</a></div>
                 <div class="details">
                 <div class="row g-3 text-start">
                     ${details}
@@ -66,6 +68,10 @@ customers.forEach(function(customer){
 })
 
 $('.data').html(box)
+    }catch{
+        console.log('error')
+    }
+    
 }
 
 const displayChart = (id) => {
@@ -104,11 +110,24 @@ const displayChart = (id) => {
         }
     });
 };
-document.querySelector('.search').addEventListener('input', (e) => {
+document.querySelector('.search-name').addEventListener('input', (e) => {
     const filterValue = e.target.value.toLowerCase();
     const filteredCustomers = customers.filter(customer => 
         customer.name.toLowerCase().includes(filterValue)
     );
+   
+
+    display(filteredCustomers, transactions);
+    detailsBtns=  document.querySelectorAll(".details-btn")
+detailsBtns.forEach(btn => {
+    btn.addEventListener("click", async function(e){
+        $(btn).parent().next().slideToggle(300);
+    })
+})
+});
+document.querySelector('.search-amount').addEventListener('input', (e) => {
+    const filterValue = e.target.value.toLowerCase();
+    
     const filteredTransactions = transactions.filter(transaction => 
         transaction.amount.toString().includes(filterValue)
     );

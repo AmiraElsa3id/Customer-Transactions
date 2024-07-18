@@ -11,19 +11,29 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
 </head>
 <body>
+
     <div class="container">
         
     </div>
     <div class="row main">
-        
+        <div class="container col-md-6 mt-4 d-flex align-items-center">
+            <canvas id="transactionChart" width="400" height="200"></canvas>
+        </div>
 <div class="container mt-4 col-md-6">
     <div class="width-95">
-        <div class="search my-4 ">
-            <input type="text" name="search" class="form-control" placeholder="Filter by name or amount ... ">
+        <div class="search my-4 row gy-2 ">
+            <div class="col-md-6">
+                <input type="text" name="search" class="form-control search-name " placeholder="Filter by Name ... ">
+
+            </div>
+            <div class="col-md-6">
+            <input type="number" name="search" class="form-control search-amount "  placeholder="Filter by Amount ... ">
+
+            </div>
         
     </div>
     <h1 class="text-center ">Customer Transactions</h1>
-    <div class="row text-center justify-content-between flex-nowrap align-items-stretch ">
+    <div class="row text-center justify-content-between flex-nowrap align-items-stretch mb-3">
         <div class="col "><div class="head rounded-2">USER NAME</div></div>
         <div class="col"><div class="head rounded-2">TOTAL TRANSACTION AMOUNT</div></div>
         <div class="col"><div class="head rounded-2">DETAILS</div></div>
@@ -33,11 +43,33 @@
 </div>
     </div>
 </div>
-<div class="container col-md-6 mt-4 d-flex align-items-center">
-    <canvas id="transactionChart" width="400" height="200"></canvas>
-</div>
+
     </div>
-    
+    <!-- <footer class="site-footer">
+				<div class="container">
+					<div class="row  mx-auto mb-1 footer-div">
+						<div class="col-md-8">
+              <div class="position-relative w-100 me-auto ">
+								<button class="btn sub-btn fs-5 ">Subscribe</button>
+                <input type="text" placeholder="Enter your email to subscribe..." class="form-control w-100 fs-5">
+                <p class="colophon text-start">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+              </div>
+								
+						</div>
+						<div class="col-md-3 ">
+							<div class="social-links">
+								<a href="#"><i class="fa-brands fa-facebook"></i></a>
+								<a href="#"><i class="fa-brands fa-twitter"></i></a>
+								<a href="#"><i class="fa-brands fa-google-plus"></i></a>
+								<a href="#"><i class="fa-brands fa-pinterest"></i></a>
+							</div>
+						</div>
+
+            <!-- <p class="colophon text-start">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p> -->
+					</div>
+
+				</div>
+			</footer> -->
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/script.js"></script>
